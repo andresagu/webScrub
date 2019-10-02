@@ -12,7 +12,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = process.env.PORT || 8080;
+var PORT = 3000;
 
 // Initialize Express
 var app = express();
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://heroku_fx7v2hx3:password123!@ds229108.mlab.com:29108/heroku_fx7v2hx3", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI);
 
 // Routes
 
