@@ -31,7 +31,6 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://tester:password123@ds229108.mlab.com:29108/heroku_fx7v2hx3",{ useNewUrlParser: true });
 
 // Routes
-mongoose.Promise = Promise;
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
