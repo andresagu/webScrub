@@ -28,16 +28,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-//mongoose.connect("mongodb://heroku_fx7v2hx3:password123!@ds229108.mlab.com:29108/heroku_fx7v2hx3",{ useNewUrlParser: true });
+mongoose.connect("mongodb://tester:password123@ds229108.mlab.com:29108/heroku_fx7v2hx3",{ useNewUrlParser: true });
 
 // Routes
 mongoose.Promise = Promise;
-mongoose
-  .connect("mongodb://tester:password123@ds229108.mlab.com:29108/heroku_fx7v2hx3")
-  .then( result => {
-    console.log(`Connected to database '${result.connections[0].name}' on ${result.connections[0].host}:${result.connections[0].port}`);
-  })
-  .catch(err => console.log('There was an error with your connection:', err));
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
